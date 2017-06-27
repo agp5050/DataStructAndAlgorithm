@@ -1,4 +1,4 @@
-package LeetCode;
+package cn.alone.LeetCode;
 
 /**
  * Created by RojerAlone on 2017/6/24.
