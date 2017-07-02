@@ -14,7 +14,7 @@ import java.util.Map;
  *      将每一行的字符放在 map 中，每一行的每个字符对应该行的 index
  *      获取字符串的第一个字符，遍历字符串中的每个字符，如果和第一个字符所在行不一致就进入下一轮遍历
  */
-public class KeyboardRow {
+public class P500_KeyboardRow {
 
     private static final String TOP = "qwertyuiop";
     private static final String MIDDLE = "asdfghjkl";

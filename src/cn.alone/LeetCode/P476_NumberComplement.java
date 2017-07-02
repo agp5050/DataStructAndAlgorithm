@@ -7,7 +7,7 @@ package cn.alone.LeetCode;
  * 运用异或的特性,101 ^ 111 = 010
  * 任意数字和n个1的二进制异或，相当于每一位取反
  */
-public class NumberComplement {
+public class P476_NumberComplement {
 
     public int findComplement(int num) {
         int res = num;

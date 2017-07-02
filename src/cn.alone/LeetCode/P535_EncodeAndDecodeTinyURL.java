@@ -9,7 +9,7 @@ import java.util.Random;
  * https://leetcode.com/problems/encode-and-decode-tinyurl/
  * 将长URL和短URL在map中双向映射，生成短URL时随机选取6个字符，如果有重复的，就再次生成
  */
-public class EncodeAndDecodeTinyURL {
+public class P535_EncodeAndDecodeTinyURL {
 
     private static final String CODE = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 

@@ -9,7 +9,7 @@ package cn.alone.LeetCode;
  *      1111 相比于 111 多了一个1，1110 相比于 111 1的个数相同
  *      根据这个特性，只需要判断最后一位是不是1即可
  */
-public class CountingBits {
+public class P338_CountingBits {
 
     public int[] countBits(int num) {
         if (num < 0) {

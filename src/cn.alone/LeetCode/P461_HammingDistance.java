@@ -5,7 +5,7 @@ package cn.alone.LeetCode;
  * https://leetcode.com/problems/hamming-distance/
  * 汉明距离，将两个数异或，求出异或后二进制中1的位数
  */
-public class HammingDistance {
+public class P461_HammingDistance {
 
     public int hammingDistance(int x, int y) {
         int res = 0;

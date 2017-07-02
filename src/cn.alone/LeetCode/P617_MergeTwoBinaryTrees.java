@@ -5,7 +5,7 @@ package cn.alone.LeetCode;
  * https://leetcode.com/problems/merge-two-binary-trees/
  * 输入两个二叉树，将两个二叉树合并，如果两个树的节点不为空，那么将节点值相加
  */
-public class MergeTwoBinaryTrees {
+public class P617_MergeTwoBinaryTrees {
 
     public class TreeNode {
         int val;

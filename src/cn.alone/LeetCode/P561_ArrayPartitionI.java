@@ -7,7 +7,7 @@ import java.util.Arrays;
  * https://leetcode.com/problems/array-partition-i/
  * 题目没看太懂，就是将数组排序，然后隔一个数取值求和就可以了
  */
-public class ArrayPartitionI {
+public class P561_ArrayPartitionI {
 
     public int arrayPairSum(int[] nums) {
         int res = 0;

@@ -6,7 +6,7 @@ package cn.alone.LeetCode;
  * 输入两个 a+bi格式的字符串，计算它们的乘积，i^2=-1，输出结果也为a+bi的形式
  * 如 输入"1+1i", "1+1i" (1 + i) * (1 + i) = 1 + i^2 + 2 * i = 2i，输出0+2i
  */
-public class ComplexNumberMultiplication {
+public class P537_ComplexNumberMultiplication {
 
     public String complexNumberMultiply(String a, String b) {
         if (a == null || b == null || a.equals("") || b.equals("")) {

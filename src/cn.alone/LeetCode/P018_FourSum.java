@@ -10,7 +10,7 @@ import java.util.List;
  * 这个问题是 TwoSum 、3Sum 的变种，和 3Sum 一样，先确定一个值，然后从剩下的数组中找一个 3Sum 的结果，
  * 再把当前值加入，逐次遍历即可
  */
-public class FourSum {
+public class P018_FourSum {
 
     public List<List<Integer>> fourSum(int[] nums, int target) {
         List<List<Integer>> res = new ArrayList<>();

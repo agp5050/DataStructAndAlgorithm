@@ -16,7 +16,7 @@ import java.util.Map;
  * 所以在map中，key为0时，value为2。通过O(n^2)的时间复杂度即可找出前两个数组的和的情况，
  * 然后再用O(n^2)的时间复杂度去匹配C和D数组的任意数字和是否在map中存在。
  */
-public class FourSumII {
+public class P454_FourSumII {
 
     public int fourSumCount(int[] A, int[] B, int[] C, int[] D) {
         int res = 0;

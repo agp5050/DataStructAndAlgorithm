@@ -10,7 +10,7 @@ import java.util.List;
  * 遍历数组，每次先确定3个数字中的1个，那么剩下的两个就是TwoSum问题
  * 题目中要求返回数字而不是下标值，可以将输入数据进行排序后再用 Two Sum II 中的方法进行查找
  */
-public class ThreeSum {
+public class P015_ThreeSum {
 
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> res = new ArrayList<List<Integer>>();

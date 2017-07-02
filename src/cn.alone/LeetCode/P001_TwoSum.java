@@ -12,7 +12,7 @@ import java.util.Map;
  * 遍历数组，遍历到一个数的时候从字典（Map）中查找有没有和当前下标的数相加等于目标值的数，如果有的话就直接返回
  * 没有的话，当前坐标在字典中不存在就加入，存在就继续遍历（key为下标对应元素的值，value为下标值）
  */
-public class TwoSum {
+public class P001_TwoSum {
 
     public int[] twoSum(int[] nums, int target) {
         int[] res = new int[2];

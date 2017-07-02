@@ -9,7 +9,7 @@ import java.util.Arrays;
  * 再和目标值进行比较，如果和目标值相同，则返回目标值，
  * 否则继续计算选取更接近的值作为结果值。直到找到和目标值相同的值或者计算完毕
  */
-public class ThreeSumClosest {
+public class P016_ThreeSumClosest {
 
     public int threeSumClosest(int[] nums, int target) {
         int res = 0;

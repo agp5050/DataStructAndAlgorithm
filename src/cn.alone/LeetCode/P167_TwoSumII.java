@@ -9,7 +9,7 @@ package cn.alone.LeetCode;
  * 否则如果大于目标值，则说明应该小一点，那么就把结尾的坐标 -1
  * 同理，如果小于目标值，那么应该将开头的坐标 +1
  */
-public class TwoSumII {
+public class P167_TwoSumII {
 
     public int[] twoSum(int[] numbers, int target) {
         int[] res = new int[2];
