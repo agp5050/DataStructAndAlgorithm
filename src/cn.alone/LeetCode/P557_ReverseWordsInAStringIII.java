@@ -3,7 +3,7 @@ package cn.alone.LeetCode;
 /**
  * Created by RojerAlone on 2017/7/2.
  * https://leetcode.com/problems/reverse-words-in-a-string-iii/
- * 根据空格划分句子中的单词，然后将每个单词的每个字符都翻转过来
+ * Reverse String 的变种，根据空格划分句子中的单词，然后再对每个单词调用 Reverse String
  */
 public class P557_ReverseWordsInAStringIII {
 
