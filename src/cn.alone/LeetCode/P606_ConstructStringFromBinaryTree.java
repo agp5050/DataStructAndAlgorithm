@@ -9,16 +9,16 @@ import java.util.Stack;
  * https://leetcode.com/problems/construct-string-from-binary-tree/
  * 从二叉树中构造一个字符串
  * Input: Binary tree: [1,2,3,4]
- * 1
+ *   1
  * /   \
  * 2     3
  * /
  * 4
- * <p>
+ *
  * Output: "1(2(4))(3)"
  * 如果一个结点的右边的兄弟节点没有，那么不用写括号
  * Input: Binary tree: [1,2,3,null,4]
- * 1
+ *    1
  * /   \
  * 2     3
  * \
