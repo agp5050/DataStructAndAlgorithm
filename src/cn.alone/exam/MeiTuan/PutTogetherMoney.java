@@ -32,17 +32,11 @@ public class PutTogetherMoney {
             res++;
             return;
         }
-//        for (int m : moneys) {
-//            if (m > money) {
-//                return;
-//            }
-//            getKinds(money - m);
-//        }
-        for (int i = 0; i < 6; i++) {
-            if (moneys[i] > money) {
+        for (int m : moneys) {
+            if (m > money) {
                 return;
             }
-            getKinds(money - moneys[i]);
+            getKinds(money - m);
         }
     }
 
