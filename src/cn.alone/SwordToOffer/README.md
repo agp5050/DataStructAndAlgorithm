@@ -1,5 +1,5 @@
 # 剑指Offer
-
+OJ 平台为 [牛客网](https://www.nowcoder.com/ta/coding-interviews)
 - [二维数组中的查找](https://github.com/RojerAlone/DataStructAndAlgorithm/blob/master/src/cn.alone/SwordToOffer/FindNumberInTwoDimensionalArray.java)
 - [替换空格](https://github.com/RojerAlone/DataStructAndAlgorithm/blob/master/src/cn.alone/SwordToOffer/ReplaceSpace.java)
 - [从尾到头打印链表](https://github.com/RojerAlone/DataStructAndAlgorithm/blob/master/src/cn.alone/SwordToOffer/PrintListFromTailToHead.java)
@@ -9,3 +9,8 @@
 - [斐波那契数列](https://github.com/RojerAlone/DataStructAndAlgorithm/blob/master/src/cn.alone/SwordToOffer/Fibonacci.java)
 - [跳台阶](https://github.com/RojerAlone/DataStructAndAlgorithm/blob/master/src/cn.alone/SwordToOffer/JumpFloor.java)
 - [变态跳台阶](https://github.com/RojerAlone/DataStructAndAlgorithm/blob/master/src/cn.alone/SwordToOffer/JumpFloorII.java)
+- [矩形覆盖](https://github.com/RojerAlone/DataStructAndAlgorithm/blob/master/src/cn.alone/SwordToOffer/RectCover.java)
+- [二进制中 1 的个数](https://github.com/RojerAlone/DataStructAndAlgorithm/blob/master/src/cn.alone/SwordToOffer/NumberOf1.java)
+- [数值的整数次方](https://github.com/RojerAlone/DataStructAndAlgorithm/blob/master/src/cn.alone/SwordToOffer/Power.java)
+- [调整数组顺序使奇数位于偶数前面](https://github.com/RojerAlone/DataStructAndAlgorithm/blob/master/src/cn.alone/SwordToOffer/ReOrderArray.java)
+- [链表中倒数第 k 个结点](https://github.com/RojerAlone/DataStructAndAlgorithm/blob/master/src/cn.alone/SwordToOffer/FindKthToTail.java)
