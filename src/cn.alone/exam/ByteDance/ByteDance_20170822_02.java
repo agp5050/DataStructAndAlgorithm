@@ -1,6 +1,7 @@
 package cn.alone.exam.ByteDance;
 
 import java.util.Scanner;
+import java.util.Stack;
 
 /**
  * Created by RojerAlone on 2017-08-26.
@@ -46,9 +47,11 @@ public class ByteDance_20170822_02 {
         int n = sc.nextInt();
         int res = Integer.MIN_VALUE;
         int[][] arrs = new int[n][n]; // 从 x 到 y 的最小值、和，右上角表示最小值，左下角表示和
+        int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
             int num = sc.nextInt();
             arrs[i][i] = num;
+            arr[i] = num;
             for (int j = 0; j <= i; j++) { // 记录从 0 到 i 的最小值、和以及计算结果
                 if (j == i) { // 如果是对角线上的数字，值是当前值
                     arrs[j][i] = num;
@@ -60,12 +63,41 @@ public class ByteDance_20170822_02 {
                     } else {
                         arrs[n - j - 1][n - i - 1] = num + arrs[n - j - 1][n - i]; // 和
                     }
-                    res = Math.max(arrs[j][i] * arrs[n - j - 1][n - i - 1], Math.max(res, num * num)); // 最小值和 和 的乘积
+                    res = Math.max(res, arrs[j][i] * arrs[n - j - 1][n - i - 1]); // 最小值和 和 的乘积
                 }
             }
+            res = Math.max(res, num * num);
         }
         sc.close();
         System.out.println(res);
+        System.out.println("单调栈：" + getMax(arr));
+    }
+
+    // 更简单的解法，单调栈
+    private static int getMax(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            return -1;
+        }
+        int length = arr.length;
+        int[] sums = new int[length];
+        sums[0] = arr[0];
+        for (int i = 1; i < length; i++) { // 计算出从 0 到当前下标的元素之和
+            sums[i] = sums[i - 1] + arr[i];
+        }
+        int max = Integer.MIN_VALUE;
+        Stack<Integer> stack = new Stack<>();
+        for (int i = 0; i < length; i++) {
+            while (!stack.isEmpty() && arr[stack.peek()] >= arr[i]) {
+                int j = stack.pop();
+                max = Math.max(max, (stack.isEmpty() ? sums[i - 1] : (sums[i - 1] - sums[stack.peek()])) * arr[j]);
+            }
+            stack.push(i);
+        }
+        while (!stack.isEmpty()) {
+            int j = stack.pop();
+            max = Math.max(max, (stack.isEmpty() ? sums[length - 1] : (sums[length - 1] - sums[stack.peek()])) * arr[j]);
+        }
+        return max;
     }
 
 }
