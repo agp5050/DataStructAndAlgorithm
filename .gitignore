@@ -10,6 +10,7 @@
 target/
 upload/
 output/
+out/
 
 # BlueJ files
 *.ctxt
