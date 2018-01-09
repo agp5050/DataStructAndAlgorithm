@@ -1,7 +1,9 @@
 package cn.alone.algorithm.trie;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by RojerAlone on 2018-01-09
@@ -37,6 +39,10 @@ public class TrieNode {
 
     public TrieNode getNext(char character) {
         return next.get(character);
+    }
+
+    public Collection<TrieNode> getNextValues() {
+        return next.values();
     }
 
     public synchronized TrieNode addNext(TrieNode node) {

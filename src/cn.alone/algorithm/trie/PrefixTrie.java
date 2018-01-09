@@ -1,15 +1,15 @@
 package cn.alone.algorithm.trie;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import sun.text.normalizer.Trie;
+
+import java.util.*;
 
 /**
  * Created by RojerAlone on 2018-01-09
  */
 public class PrefixTrie {
 
+    // TODO: init size
     private Map<Character, TrieNode> next = new HashMap<>();
     private Set<String> words = new HashSet<>();
 
@@ -100,6 +100,46 @@ public class PrefixTrie {
             }
         }
         return false;
+    }
+
+    public List<String> getPrefixWord(String word) {
+        List<String> result = new ArrayList<>();
+        if (word == null || word.isEmpty()) {
+            return result;
+        }
+        // TODO : multiple threads
+        int length = word.length();
+        // 先找到输入词截止的位置
+        TrieNode node = next.get(word.charAt(0));
+        for (int i = 1; i < length; i++) {
+            node = node.getNext(word.charAt(i));
+            if (node == null) {
+                return result;
+            }
+        }
+        if (node.isWord()) { // 如果输入词也是一个完整的词，添加到结果中
+            result.add(word);
+        }
+        // 记录出现过的字符，最终拼成 word
+        Stack<TrieNode> nodeStack = new Stack<>();
+        for (TrieNode tmpNode : node.getNextValues()) {
+            nodeStack.push(tmpNode);
+        }
+
+        return result;
+    }
+
+    public void deleteWord(String word) {
+        if (word == null || word.isEmpty() || !words.contains(word)) {
+            return;
+        }
+        words.remove(word);
+        // TODO : remove word for trie
+    }
+
+    public void clear() {
+        next.clear();
+        words.clear();
     }
 
 }
