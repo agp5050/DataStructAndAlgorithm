@@ -1,7 +1,5 @@
 package cn.alone.algorithm.trie;
 
-import sun.text.normalizer.Trie;
-
 import java.util.*;
 
 /**
@@ -129,7 +127,7 @@ public class PrefixTrie {
         return result;
     }
 
-    public void deleteWord(String word) {
+    public synchronized void deleteWord(String word) {
         if (word == null || word.isEmpty() || !words.contains(word)) {
             return;
         }
