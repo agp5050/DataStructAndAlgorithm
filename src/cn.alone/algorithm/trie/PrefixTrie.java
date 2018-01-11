@@ -7,6 +7,8 @@ import java.util.*;
  */
 public class PrefixTrie {
 
+    private final int MAX_DEPTH = 10;
+
     // TODO: init size
     private Map<Character, TrieNode> next = new HashMap<>();
     private Set<String> words = new HashSet<>();
@@ -36,13 +38,13 @@ public class PrefixTrie {
             return;
         }
         int length = str.length();
-        TrieNode node = new TrieNode(str.charAt(0));
+        TrieNode node = new TrieNode(str.charAt(0), 0);
         if (length == 1) {
             node.setWord();
         }
         node = this.addNode(node);
         for (int i = 1; i < length; i++) {
-            TrieNode tmpNode = new TrieNode(str.charAt(i));
+            TrieNode tmpNode = new TrieNode(str.charAt(i), i);
             if (i == length - 1) {
                 tmpNode.setWord();
             }
@@ -123,7 +125,31 @@ public class PrefixTrie {
         for (TrieNode tmpNode : node.getNextValues()) {
             nodeStack.push(tmpNode);
         }
-
+        StringBuilder sb = new StringBuilder(word);
+        while (!nodeStack.empty()) {
+            TrieNode tmpNode = nodeStack.pop();
+            if (tmpNode.getDepth() > MAX_DEPTH) { // 不能超过最大深度
+                continue;
+            }
+            sb.append(tmpNode.getCharacter());
+            if (tmpNode.isWord()) {
+                result.add(sb.toString());
+            }
+            if (tmpNode.getNextSize() > 0) {
+                for (TrieNode nextNode : tmpNode.getNextValues()) {
+                    nodeStack.push(nextNode);
+                }
+            } else {
+                if (!nodeStack.empty()) {
+                    int curDepth = tmpNode.getDepth();
+                    int preDepth = nodeStack.peek().getDepth();
+                    while (curDepth - preDepth >= 0) {
+                        sb.deleteCharAt(curDepth);
+                        --curDepth;
+                    }
+                }
+            }
+        }
         return result;
     }
 

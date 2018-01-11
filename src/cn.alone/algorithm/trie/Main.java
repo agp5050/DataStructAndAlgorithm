@@ -20,6 +20,18 @@ public class Main {
         System.out.println(trie.containsWord(str2 + str3));
 
         System.out.println(trie.getWordSet());
+
+        trie.addWord("北京天安门");
+        System.out.println(trie.getPrefixWord(str1));
+
+        trie.addWord(str1);
+        System.out.println(trie.getPrefixWord(str1));
+
+        trie.addWord("地铁跑酷1");
+        trie.addWord("地铁跑酷2");
+        trie.addWord("地铁跑酷3");
+        trie.addWord("地铁跑酷是什么东西");
+        System.out.println(trie.getPrefixWord("地铁"));
     }
 
 }
