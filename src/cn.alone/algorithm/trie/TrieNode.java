@@ -17,40 +17,48 @@ public class TrieNode {
     public TrieNode() {
     }
 
-    public TrieNode(char character, int depth) {
+    TrieNode(char character, int depth) {
         this.character = character;
         this.depth = depth;
     }
 
-    public char getCharacter() {
+    char getCharacter() {
         return character;
     }
 
-    public int getDepth() {
+    int getDepth() {
         return depth;
     }
 
-    public boolean isWord() {
+    boolean isWord() {
         return word;
     }
 
-    public void setWord() {
+    void setWord() {
         word = true;
     }
 
-    public TrieNode getNext(char character) {
+    void clearWord() {
+        word = false;
+    }
+
+    TrieNode getNext(char character) {
         return next.get(character);
     }
 
-    public Collection<TrieNode> getNextValues() {
+    Collection<TrieNode> getNextValues() {
         return next.values();
     }
 
-    public int getNextSize() {
+    void removeNext(char c) {
+        next.remove(c);
+    }
+
+    int getNextSize() {
         return next.size();
     }
 
-    public synchronized TrieNode addNext(TrieNode node) {
+    synchronized TrieNode addNext(TrieNode node) {
         TrieNode nextNode = this.next.get(node.getCharacter());
         if (nextNode == null) {
             this.next.put(node.getCharacter(), node);
