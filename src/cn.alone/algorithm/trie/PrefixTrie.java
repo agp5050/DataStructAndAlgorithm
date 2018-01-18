@@ -128,6 +128,15 @@ public class PrefixTrie {
         while (!nodeStack.empty()) {
             TrieNode tmpNode = nodeStack.pop();
             if (tmpNode.getDepth() > MAX_DEPTH) { // 不能超过最大深度
+                if (!nodeStack.empty()) {
+                    int curDepth = tmpNode.getDepth();
+                    int preDepth = nodeStack.peek().getDepth();
+                    --curDepth; // 当前字符没有加入到字符串中,下标减一
+                    while (curDepth - preDepth >= 0) {
+                        sb.deleteCharAt(curDepth);
+                        --curDepth;
+                    }
+                }
                 continue;
             }
             sb.append(tmpNode.getCharacter());
