@@ -201,6 +201,10 @@ public class PrefixTrie {
         }
     }
 
+    public int getSize() {
+        return words.size();
+    }
+
     public void clear() {
         next.clear();
         words.clear();
